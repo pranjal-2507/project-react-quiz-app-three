@@ -1,0 +1,67 @@
+body {
+  background-color: #473a8d;
+}
+h1 {
+  text-align: center;
+  color: #047e07;
+}
+.cont {
+  width: 47%;
+  height: 350px;
+  background-color: white;
+  margin-left: 400px;
+  color: black;
+  margin-bottom: 100px;
+}
+.phrase {
+  padding-top: 40px;
+  position: relative;
+  margin-top: 10px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+.Scorephrase {
+  text-align: center;
+  padding-top: 20px;
+
+  margin-top: -120px;
+  color: #0101ff;
+  font-family: "Times New Roman", Times, serif;
+
+  font-weight: bolder;
+}
+.div1 {
+  margin-left: 25px;
+  position: relative;
+  width: 86%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 10px;
+}
+span {
+  font-weight: bold;
+}
+button {
+  width: 150px;
+  font-weight: bold;
+  height: 30px;
+}
+.Btns {
+  position: relative;
+  bottom: 40px;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 520px;
+  margin-top: 30px;
+}
+#play {
+  background-color: white;
+  border: 2px solid #8686f3;
+  color: #8686f3;
+}
+#back {
+  background-color: white;
+  border: 2px solid #8ebb89;
+  color: #8ebb89;
+}
