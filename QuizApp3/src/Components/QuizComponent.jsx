@@ -32,8 +32,8 @@ const Quiz = () => {
     }
   }
   let handleFinish = ()=>{
-    localStorage("score",score)
-    localStorage("currentQues", currentQues)
+    localStorage.setItem("score",score)
+    localStorage.setItem("currentQues", currentQues)
   }
 
 
