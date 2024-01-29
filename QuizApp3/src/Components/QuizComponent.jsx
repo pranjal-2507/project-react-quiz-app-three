@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import './Quiz.css';
-import quizQuestion from '../resources/quizQuestion';
-import ResultComponent from './Result.Component';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import "./Quiz.css";
+import quizQuestion from "../resources/quizQuestion";
+import ResultComponent from "./Result.Component";
+import { Link } from "react-router-dom";
 
 const Quiz = () => {
   const [currentQues, setCurrentQues] = useState(0);
-  const [score,setScore] = useState(0)
+  const [score, setScore] = useState(0);
 
-  let  handlePre = () => {
-    setCurrentQues((prevQues) => (prevQues === 0 ? quizQuestion.length - 1 : prevQues - 1));
+  let handlePre = () => {
+    setCurrentQues((prevQues) =>
+      prevQues === 0 ? quizQuestion.length - 1 : prevQues - 1
+    );
   };
 
   let handleNext = () => {
@@ -17,27 +19,25 @@ const Quiz = () => {
   };
 
   let handleQuit = () => {
-    window.confirm('Are you sure you want to quit ?');
+    window.confirm("Are you sure you want to quit ?");
   };
 
-  let handleOption = (e)=>{
-    if (e.target.textContent == quizQuestion[currentQues].answer){
-      setScore(score+1)
-      setCurrentQues(currentQues+1)
+  let handleOption = (e) => {
+    if (e.target.textContent == quizQuestion[currentQues].answer) {
+      alert("The Answer is Correct!");
+      setScore(score + 1);
+      setCurrentQues(currentQues + 1);
+    } else {
+      alert("The Answer is Wrong");
+      setCurrentQues(currentQues + 1);
     }
-    
-    else{
-      alert("Wrong Answer!")
-      setCurrentQues(currentQues+1)
-    }
-  }
-  let handleFinish = ()=>{
-    localStorage.setItem("score",score)
-    localStorage.setItem("currentQues", currentQues)
-  }
+  };
+  let handleFinish = () => {
+    localStorage.setItem("score", score);
+    localStorage.setItem("currentQues", currentQues);
+  };
 
-
-  console.log(quizQuestion[0].answer)
+  console.log(quizQuestion[0].answer);
   return (
     <>
       <div className="container">
@@ -48,10 +48,18 @@ const Quiz = () => {
         <p>{quizQuestion[currentQues].question}</p>
 
         <div className="options">
-          <button className="option" onClick={handleOption}>{quizQuestion[currentQues].optionA}</button>
-          <button className="option" onClick={handleOption}>{quizQuestion[currentQues].optionB}</button>
-          <button className="option" onClick={handleOption}>{quizQuestion[currentQues].optionC}</button>
-          <button className="option" onClick={handleOption}>{quizQuestion[currentQues].optionD}</button>
+          <button className="option" onClick={handleOption}>
+            {quizQuestion[currentQues].optionA}
+          </button>
+          <button className="option" onClick={handleOption}>
+            {quizQuestion[currentQues].optionB}
+          </button>
+          <button className="option" onClick={handleOption}>
+            {quizQuestion[currentQues].optionC}
+          </button>
+          <button className="option" onClick={handleOption}>
+            {quizQuestion[currentQues].optionD}
+          </button>
         </div>
         <div className="lastBtns">
           <button id="pre" className="btn" onClick={handlePre}>
@@ -70,7 +78,7 @@ const Quiz = () => {
           </Link>
         </div>
       </div>
-   </>
+    </>
   );
 };
 
